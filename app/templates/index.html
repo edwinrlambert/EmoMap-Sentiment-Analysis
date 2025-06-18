@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EmoMap Sentiment Analysis Map Search</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key={{ config['GOOGLE_MAPS_API_KEY'] }}&loading=async&libraries=places&callback=initAutocomplete"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sentiment HeatMap Search</h1>
+      <input id="autocomplete" placeholder="Enter a location" type="text" />
+      <div id="map"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+  </body>
+</html>
